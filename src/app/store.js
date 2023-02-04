@@ -1,4 +1,4 @@
-import {create} from 'zustand'
+import create from 'zustand'
 import { devtools, persist } from 'zustand/middleware'
 
 const courseStore = (set) => ({
@@ -8,11 +8,11 @@ const courseStore = (set) => ({
     //crud actions
 
     addCourse: (course) => {
-        set((state) => ({ course: [course, ...state.courses] }))
+        set((state) => ({ courses: [course, ...state.courses] }))
     },
 
     removeCourse: (courseId) => {
-        set((state) => ({ course: state.courses.filter((course) => course.id !== courseId) }))
+        set((state) => ({ courses: state.courses.filter((course) => course.id !== courseId) }))
     },
 
     toggleStatus: (courseId) => {
